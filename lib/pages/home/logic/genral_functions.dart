@@ -3,9 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:weather_app/config/constants.dart';
 import 'package:weather_app/data/providers/location_data.dart';
 import 'package:weather_app/data/providers/persistence_provider.dart';
+import 'package:weather_app/data/providers/weather_data.dart';
 import 'package:weather_app/data/services/image_service.dart';
 import 'package:weather_app/data/services/location_service.dart';
 import 'package:weather_app/data/services/weather_service.dart';
+import 'package:weather_app/util/context_extensions.dart';
 
 class GeneralFunctions {
   static bool isFirstTime(BuildContext context) {
@@ -57,5 +59,37 @@ class GeneralFunctions {
     }
     // ignore: use_build_context_synchronously
     await setFirstTime(context);
+  }
+
+  static Future<void> refreshLocationData(
+      LocationService locationService,
+      WeatherService weatherService,
+      ImageService imgService,
+      BuildContext context,
+      String? latitude,
+      String? longitude,
+      String locationName) async {
+    try {
+      context.read<CountryData>().country = locationName;
+      context.read<WeatherData>().lastUpdated = DateTime.now();
+
+      await Future.wait([
+        // ignore: use_build_context_synchronously
+        context
+            .read<PersistenceProvider>()
+            .prefs
+            .setString(AppConsts.countryLocalData, locationName),
+        weatherService.getForecast(
+            num.tryParse(latitude ?? '0')?.toDouble() ?? 0,
+            num.tryParse(longitude ?? '0')?.toDouble() ?? 0),
+        weatherService.getFutureWeather(
+            num.tryParse(latitude ?? '0')?.toDouble() ?? 0,
+            num.tryParse(longitude ?? '0')?.toDouble() ?? 0),
+        imgService.getImage(locationName)
+      ]);
+    } catch (e) {
+      // ignore: use_build_context_synchronously
+      context.showSnackBar('AN error occured');
+    }
   }
 }

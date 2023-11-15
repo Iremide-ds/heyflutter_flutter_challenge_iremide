@@ -44,6 +44,7 @@ class ImageService {
 
   void initData() {
     try {
+      context.read<LocationImageProvider>().locationImage = null;
       final existingData = _prefs.getString(AppConsts.imageLocalData);
 
       if (existingData != null) {

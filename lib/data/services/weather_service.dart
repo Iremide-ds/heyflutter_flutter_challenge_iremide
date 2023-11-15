@@ -26,6 +26,7 @@ class WeatherService {
 
   Future<void> getForecast(double lat, double lon) async {
     try {
+      context.read<WeatherData>().weatherData = null;
       final response =
           await _client.getForecast(lat, lon, AppConsts.weatherApiId);
 
@@ -78,6 +79,7 @@ class WeatherService {
 
   Future<void> getFutureWeather(double lat, double lon) async {
     try {
+      context.read<WeatherData>().futureWeatherData = null;
       final response =
           await _client.getFutureWeather(lat, lon, AppConsts.weatherApiId);
 

@@ -11,6 +11,7 @@ import 'package:weather_app/data/services/location_service.dart';
 import 'package:weather_app/data/services/weather_service.dart';
 import 'package:weather_app/pages/home/logic/genral_functions.dart';
 import 'package:weather_app/util/date_extensions.dart';
+import 'package:weather_app/widgets/app_drawer.dart';
 import 'package:weather_app/widgets/atmospheric_conditions.dart';
 import 'package:weather_app/widgets/current_weather.dart';
 import 'package:weather_app/widgets/future_weather.dart';
@@ -83,20 +84,23 @@ class _HomePageState extends State<HomePage> {
           Scaffold(
               key: _key,
               backgroundColor: Colors.black38,
-              drawer: const Drawer(),
+              endDrawer: const CustomAppDrawer(),
               appBar: AppBar(
                 elevation: 0,
                 backgroundColor: Colors.transparent,
                 foregroundColor: Colors.transparent,
                 leadingWidth: 110.w,
                 scrolledUnderElevation: 0,
-                leading: const LocationPicker(),
+                leading: LocationPicker(
+                    imageService: _imgService,
+                    locationService: _locationService,
+                    weatherService: _weatherService),
                 actions: [
                   Padding(
                     padding: EdgeInsets.only(right: 24.w),
                     child: IconButton(
                       onPressed: () {
-                        _key.currentState?.openDrawer();
+                        _key.currentState?.openEndDrawer();
                       },
                       icon: Icon(Icons.menu, color: Colors.white, size: 32.w),
                     ),

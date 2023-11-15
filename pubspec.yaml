@@ -48,6 +48,8 @@ dependencies:
   geocoding: ^2.1.1
   flutter_animate: ^4.2.0+1
   shared_preferences: ^2.2.2
+  country_state_city: ^0.1.6
+  url_launcher: ^6.2.1
 
 dev_dependencies:
   flutter_test:

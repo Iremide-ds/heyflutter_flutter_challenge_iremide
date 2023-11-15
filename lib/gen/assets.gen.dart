@@ -21,6 +21,10 @@ class $AssetsImageGen {
   AssetGenImage get mistHaze =>
       const AssetGenImage('assets/image/mist_haze.png');
 
+  /// File path: assets/image/pngwing.com.png
+  AssetGenImage get pngwingCom =>
+      const AssetGenImage('assets/image/pngwing.com.png');
+
   /// File path: assets/image/storm.png
   AssetGenImage get storm => const AssetGenImage('assets/image/storm.png');
 
@@ -32,7 +36,8 @@ class $AssetsImageGen {
       const AssetGenImage('assets/image/sunny_cloud.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [cloudy, mistHaze, storm, sun, sunnyCloud];
+  List<AssetGenImage> get values =>
+      [cloudy, mistHaze, pngwingCom, storm, sun, sunnyCloud];
 }
 
 class $AssetsSvgGen {
