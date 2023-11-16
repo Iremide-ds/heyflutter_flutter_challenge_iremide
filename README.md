@@ -1,16 +1,55 @@
-# weather_app
+# Simple Weather App
 
-A new Flutter project.
+This is a simple weather app built with Flutter, designed to provide basic weather information to users.
+
+## Features
+
+- **Current Weather:** Displays the current weather conditions based on the user's location or a predefined location.
+- **Weather Forecast:** Shows a brief forecast for the upcoming days.
+- **Temperature and Conditions:** Provides information on temperature, humidity, wind speed, and weather conditions (e.g., sunny, cloudy, rainy).
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this app locally, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. **Clone the Repository:** 
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Navigate to the Project Directory:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+Copy code
+cd weather-app
+```
+
+3. **Install Dependencies:**
+
+```bash
+Copy code
+flutter pub get
+```
+
+4. Run the App:
+
+```bash
+Copy code
+flutter run
+```
+
+## Usage
+Upon launching the app, users can:
+
+View the current weather information displayed on the home screen.
+Swipe or navigate to see the weather forecast for the upcoming days.
+Tap on specific locations for more detailed information about the weather.
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+- Fork the repository.
+- Create your branch (git checkout -b feature/YourFeature).
+- Commit your changes (git commit -am 'Add new feature').
+- Push to the branch (git push origin feature/YourFeature).
+- Open a pull request.
