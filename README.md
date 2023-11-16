@@ -13,28 +13,25 @@ This is a simple weather app built with Flutter, designed to provide basic weath
 To run this app locally, follow these steps:
 
 1. **Clone the Repository:** 
-   ```bash
-   git clone https://github.com/your-username/weather-app.git
-   ```
+```bash
+git clone https://github.com/Iremide-ds/heyflutter_flutter_challenge_iremide.git
+```
 
 2. **Navigate to the Project Directory:**
 
 ```bash
-Copy code
 cd weather-app
 ```
 
 3. **Install Dependencies:**
 
 ```bash
-Copy code
 flutter pub get
 ```
 
 4. Run the App:
 
 ```bash
-Copy code
 flutter run
 ```
 
